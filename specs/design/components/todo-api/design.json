@@ -1,0 +1,17 @@
+{
+  "name": "todo-api",
+  "type": "service",
+  "version": "0.1.0",
+  "language": "Ballerina",
+  "buildpack": "docker",
+  "appPath": "todo-api",
+  "entrypoint": "deployment/service",
+  "exposure": "internet",
+  "dependencies": [
+    { "kind": "platform-resource", "name": "thunder", "resourceType": "thunder-app", "parameters": {}, "description": "Verifies the gateway's signed assertion for every call and enforces the todos scopes." },
+    { "kind": "platform-resource", "name": "todo-db", "resourceType": "postgres-cnpg", "parameters": {}, "description": "Persists each user's todo items across sessions and devices." }
+  ],
+  "description": "The backend for the todo app: exposes /me/todos to list, create, update and delete the signed-in caller's own todos, persisting them in its Postgres database. It never sees another user's todos and performs no cross-user aggregation.",
+  "stories": [2, 3, 4, 5, 6, 7],
+  "skillsPinned": ["openapi-conventions", "ballerina", "api-management", "thunder-authentication"]
+}

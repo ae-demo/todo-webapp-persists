@@ -1,0 +1,65 @@
+{
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "statement": "A user signs in through the organization's single sign-on before accessing their todos",
+      "stories": [1],
+      "criteria": [
+        { "id": "AC-001-a", "must": "An unauthenticated visitor is directed to sign in before seeing any todo list", "method": "e2e" },
+        { "id": "AC-001-b", "must": "After signing in, the user lands on their own todo list", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "statement": "A user can add a new todo with a title",
+      "stories": [2],
+      "criteria": [
+        { "id": "AC-002-a", "must": "Submitting a title creates a new todo that appears in the user's list", "method": "e2e" },
+        { "id": "AC-002-b", "must": "A new todo starts as not-completed", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "statement": "A user can view their list of todos",
+      "stories": [3],
+      "criteria": [
+        { "id": "AC-003-a", "must": "The user's todo list screen shows every todo they have created", "method": "e2e" },
+        { "id": "AC-003-b", "must": "A todo list shows only the signed-in user's own todos, never another user's", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "statement": "A user can mark a todo as complete or incomplete",
+      "stories": [4],
+      "criteria": [
+        { "id": "AC-004-a", "must": "Marking a todo complete updates its status and is reflected in the list", "method": "e2e" },
+        { "id": "AC-004-b", "must": "Marking a completed todo incomplete reverses its status", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "statement": "A user can edit a todo's title",
+      "stories": [5],
+      "criteria": [
+        { "id": "AC-005-a", "must": "Editing a todo's title and saving updates the title shown in the list", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "statement": "A user can delete a todo",
+      "stories": [6],
+      "criteria": [
+        { "id": "AC-006-a", "must": "Deleting a todo removes it from the user's list", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "statement": "A user's todos persist across sessions and devices",
+      "stories": [7],
+      "criteria": [
+        { "id": "AC-007-a", "must": "A todo created in one session is still present after signing out and signing back in", "method": "e2e" },
+        { "id": "AC-007-b", "must": "A todo created from one device or browser session is visible when the same user signs in elsewhere", "method": "e2e" }
+      ]
+    }
+  ]
+}

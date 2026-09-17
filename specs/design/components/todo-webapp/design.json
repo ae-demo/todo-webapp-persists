@@ -1,0 +1,17 @@
+{
+  "name": "todo-webapp",
+  "type": "web-application",
+  "version": "0.1.0",
+  "language": "TypeScript",
+  "buildpack": "docker",
+  "appPath": "todo-webapp",
+  "entrypoint": "deployment/web-application",
+  "exposure": "internet",
+  "dependencies": [
+    { "kind": "component", "name": "todo-api", "description": "Calls the Todo API to list, add, edit, complete and delete the signed-in user's todos." },
+    { "kind": "platform-resource", "name": "thunder", "resourceType": "thunder-app", "parameters": {}, "description": "Signs the user in through Thunder before showing their todo list." }
+  ],
+  "description": "The single-page todo app: a signed-in user's private list, with screens to add, edit, complete and delete todos. It renders the UI and calls todo-api for all persistence; it holds no data of its own and performs no server-side logic.",
+  "stories": [1, 2, 3, 4, 5, 6, 7],
+  "skillsPinned": ["wireframes", "react-webapp", "oxygen-ui-design-system", "thunder-authentication"]
+}
